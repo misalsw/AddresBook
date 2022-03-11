@@ -8,31 +8,31 @@ public class ClassMethods {
     static ArrayList<Contact> contactbook = new ArrayList<>();
 
     public void addContact() {
-        System.out.println("Enter First Name:- ");
+        System.out.print("Enter First Name:- ");
         String first = input.next();
 
-        System.out.println("Enter Last Name:- ");
+        System.out.print("Enter Last Name:- ");
         String last = input.next();
 
-        System.out.println("Enter Address:- ");
+        System.out.print("Enter Address:- ");
         String add = input.next();
 
-        System.out.println("Enter City:- ");
+        System.out.print("Enter City:- ");
         String city = input.next();
 
-        System.out.println("Enter State Name:- ");
+        System.out.print("Enter State Name:- ");
         String state = input.next();
 
-        System.out.println("Enter Zip Code:- ");
+        System.out.print("Enter Zip Code:- ");
         int zip = input.nextInt();
 
-        System.out.println("Enter Mobile Num:- ");
+        System.out.print("Enter Mobile Num:- ");
         long phone = input.nextLong();
 
-        System.out.println("Enter E-mail:- ");
+        System.out.print("Enter E-mail:- ");
         String mail = input.next();
 
-        System.out.print("Contact added Suceessfully.");
+        System.out.println("\nContact added Suceessfully.");
 
     }
 
@@ -117,6 +117,26 @@ public class ClassMethods {
             }
 
         }
+    }
+
+    public void deleteContact() {
+        System.out.print("Enter first name to delete contact:- ");
+        String name_to_delete = input.next();
+
+        for(int i = 0; i < contactbook.size(); i++) {
+            String search_name_in_arrayList = contactbook.get(i).getFirst_name();
+
+            if(name_to_delete.equals(search_name_in_arrayList)) {
+                contactbook.remove(i);
+                System.out.println("\nEntered contact deleted successfully.");
+                break;
+            }
+            else {
+                continue;
+            }
+        }
+
+
     }
 
 
