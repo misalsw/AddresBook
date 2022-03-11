@@ -15,14 +15,14 @@ public class Contact {
                    String address, String city, String state,
                    int zip_code, int phone_number, String email) {
         super();
-        First_name = first_name;
-        Last_name = last_name;
-        Address = address;
-        City = city;
-        State = state;
-        Zip_code = zip_code;
-        Phone_number = phone_number;
-        Email = email;
+        this.First_name = first_name;
+        this.Last_name = last_name;
+        this.Address = address;
+        this.City = city;
+        this.State = state;
+        this.Zip_code = zip_code;
+        this.Phone_number = phone_number;
+        this.Email = email;
 
     }
 
@@ -34,64 +34,64 @@ public class Contact {
         First_name = first_name;
     }
 
-    public void setLast_name(String last_name) {
-        Last_name = last_name;
-    }
-
-    public void setAddress(String address) {
-        Address = address;
-    }
-
-    public void setCity(String city) {
-        City = city;
-    }
-
-    public void setState(String state) {
-        State = state;
-    }
-
-    public void setZip_code(int zip_code) {
-        Zip_code = zip_code;
-    }
-
-    public void setPhone_number(int phone_number) {
-        Phone_number = phone_number;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
-
     public String getLast_name() {
         return Last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        Last_name = last_name;
     }
 
     public String getAddress() {
         return Address;
     }
 
+    public void setAddress(String address) {
+        Address = address;
+    }
+
     public String getCity() {
         return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
     }
 
     public String getState() {
         return State;
     }
 
+    public void setState(String state) {
+        State = state;
+    }
+
     public int getZip_code() {
         return Zip_code;
+    }
+
+    public void setZip_code(int zip_code) {
+        Zip_code = zip_code;
     }
 
     public int getPhone_number() {
         return Phone_number;
     }
 
+    public void setPhone_number(int phone_number) {
+        Phone_number = phone_number;
+    }
+
     public String getEmail() {
         return Email;
     }
 
+    public void setEmail(String email) {
+        Email = email;
+    }
+
     public String toString() {
-        return ("First name :"+First_name + "Last name :" + Last_name +
-                "Address : " + Address + "City :" + City + "State : " + State + "Zip Code :" + Zip_code + "Mobile Num :" + Phone_number + "Mail Id: " + Email);
+        return ("First name :" + First_name + "\nLast name :" + Last_name +
+                "\nAddress : " + Address + "\nCity :" + City + "\nState : " + State + "\nZip Code :" + Zip_code + "\nMobile Num :" + Phone_number + "\nMail Id: " + Email);
     }
 }
