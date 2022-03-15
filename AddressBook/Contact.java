@@ -90,8 +90,17 @@ public class Contact {
         Email = email;
     }
 
+    @Override
     public String toString() {
-        return ("First name :" + First_name + "\nLast name :" + Last_name +
-                "\nAddress : " + Address + "\nCity :" + City + "\nState : " + State + "\nZip Code :" + Zip_code + "\nMobile Num :" + Phone_number + "\nMail Id: " + Email);
+        return "Contact{" +
+                "First_name='" + First_name + '\'' +
+                ", Last_name='" + Last_name + '\'' +
+                ", Address='" + Address + '\'' +
+                ", City='" + City + '\'' +
+                ", State='" + State + '\'' +
+                ", Zip_code=" + Zip_code +
+                ", Phone_number=" + Phone_number +
+                ", Email='" + Email + '\'' +
+                '}';
     }
 }
