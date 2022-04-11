@@ -65,6 +65,15 @@ public class AddressBookManage {
         });
     }
 
+    public void findPersonByState(String stateName){
+        nameToAddressBookMap.forEach(key, addressBookValue) -> {
+            valuePrinted = addressBookValue.addressContactList.stream().filter(n -> n.state.equals(stateName))
+                    .peek( n -> System.out.println("Person name---"+ n.firstName + " "+ n.lastName))
+                    .collect(Collectors.toList());
+        };
+        countPerson = valuePrinted.size();
+    }
+
 
 
     public static void main(String[] args) {
@@ -97,6 +106,7 @@ public class AddressBookManage {
                 default:
                     break;
             }
+            System.out.println("Number of persons found = " + addBookManage.countPerson);
 
         }
 
