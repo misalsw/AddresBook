@@ -1,4 +1,4 @@
-package com.AddressBook;
+package com.stream;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class AddressBook {
 
-    private final ArrayList<AddressBookContacts> addressContactList;
-    private final Map<String, AddressBookContacts> nameToContactDetailsMap;
-
+    ArrayList<AddressBookContacts> addressContactList;
+    Map<String, AddressBookContacts> nameToContactDetailsMap;
 
     public AddressBook() {
+        // Initializing ArrayList
         addressContactList = new ArrayList<AddressBookContacts>();
         nameToContactDetailsMap = new HashMap<>();
     }
@@ -21,6 +21,7 @@ public class AddressBook {
         addressContactList.add(createPerson);
     }
 
+    // using Method and Edit with Switch Statement
     public void editContact() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter First Name of Contact to Edit it");
@@ -107,6 +108,7 @@ public class AddressBook {
         }
     }
 
+    // Getting Input from User
     public AddressBookContacts getContactInput() {
 
         Scanner sc = new Scanner(System.in);
@@ -132,6 +134,7 @@ public class AddressBook {
         return contact;
     }
 
+    // Creating a Method and Deleting Contact with Using First Name
     public void deleteContact() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter First Name of Contact to Delete it");
@@ -145,27 +148,15 @@ public class AddressBook {
         }
     }
 
-    public void duplicateContact() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a person Name:");
-        String firstName = sc.nextLine();
-        for (int i = 0; i < addressContactList.size(); i++) {
-            AddressBookContacts model = addressContactList.get(i);
-
-            if (addressContactList.get(i).getFirstName().equals(firstName)) {
-                System.out.println("Contact Already Exist, Please add another contact");
-            }
-        }
-    }
-
-
+    // Method to create addressbook uc-6
     public AddressBook addressBookOption() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the address book system. Choose your option");
         AddressBook addBook = new AddressBook();
         boolean runLoop = true;
         while (runLoop) {
-            System.out.println("Press 1 for adding contact\nPress 2 to edit a contact\nPress 3 to delete a contact\nPress 4 Duplicate Person Name\n Press 5 to exit");
+            System.out.println(
+                    "Press 1 for adding contact\nPress:2 to edit a contact\nPress:3 to delete a contact\n press 4 to exit");
             int ch = sc.nextInt();
 
             switch (ch) {
@@ -187,11 +178,6 @@ public class AddressBook {
                     break;
 
                 case 4:
-                    System.out.println("---- Duplicate persons---");
-                    addBook.duplicateContact();
-                    break;
-
-                case 5:
                     System.out.println("exit");
                     runLoop = false;
                     break;
@@ -199,9 +185,9 @@ public class AddressBook {
                 default:
                     System.out.println("No correct option chosen");
 
-
             }
         }
         return addBook;
     }
+
 }
