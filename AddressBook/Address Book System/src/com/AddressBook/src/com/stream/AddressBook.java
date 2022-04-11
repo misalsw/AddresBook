@@ -1,9 +1,7 @@
 package com.stream;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 
@@ -146,6 +144,27 @@ public class AddressBook {
         } else {
             System.out.println("No such Contact to Delete");
         }
+    }
+
+    // UC11 Sorted Name by Alphabetically Order
+    public void viewSortedByNames() {
+        List<AddressBookContacts> sortedDetails = addressContactList.stream()
+                .sorted(Comparator.comparing(n -> n.toString())).peek(n -> System.out.println(n))
+                .collect(Collectors.toList());
+    }
+
+    // UC12 Sorted Name by Alphabetically Order with City Name
+    public void viewSortedByCity() {
+        List<AddressBookContacts> sortedDetailsByCity = addressContactList.stream()
+                .sorted((ab1, ab2) -> ab1.getCity().compareTo(ab2.getCity()))
+                .peek(addBook -> System.out.println(addBook)).collect(Collectors.toList());
+    }
+
+    // UC12 Sorted Name by Alphabetically Order with State Name
+    public void viewSortedByState() {
+        List<AddressBookContacts> sortedDetailsByCity = addressContactList.stream()
+                .sorted((ab1, ab2) -> ab1.getState().compareTo(ab2.getState()))
+                .peek(addBook -> System.out.println(addBook)).collect(Collectors.toList());
     }
 
     // Method to create addressbook uc-6
