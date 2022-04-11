@@ -12,7 +12,7 @@ public class AddressBookManage {
     List<AddressBookContacts> valuePrinted = null;
     private int countPerson;
 
-    public AdressBookManage() {
+    public AddressBookManage() {
         nameToAddressBookMap = new HashMap<>();
     }
 
@@ -73,7 +73,7 @@ public class AddressBookManage {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("welcome and create address books ");
-        AdressBookManage addBookManage = new AdressBookManage();
+        AddressBookManage addBookManage = new AddressBookManage();
         addBookManage.createAddBooks();
         boolean created = addBookManage.createAddBooks();
         System.out.println("Successfully created address books");
