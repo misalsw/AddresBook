@@ -7,11 +7,12 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class AddressBookManage {
-    
+
     private Map<String, AddressBook> nameToAddressBookMap;
     List<AddressBookContacts> valuePrinted = null;
+    private int countPerson;
 
-    public void AdressBookManage() {
+    public AdressBookManage() {
         nameToAddressBookMap = new HashMap<>();
     }
 
@@ -52,6 +53,7 @@ public class AddressBookManage {
                     .peek( n -> System.out.println("Person name---"+ n.firstName + " "+ n.lastName))
                     .collect(Collectors.toList());
         });
+        countPerson = valuePrinted.size();
     }
     // UC 9 Find  the person by state
     public void findPersonByState(String stateName)
@@ -62,15 +64,7 @@ public class AddressBookManage {
                     .peek( n -> System.out.println("Person name---"+ n.firstName + " "+ n.lastName))
                     .collect(Collectors.toList());
 
-        });
-    }
-
-    public void findPersonByState(String stateName){
-        nameToAddressBookMap.forEach(key, addressBookValue) -> {
-            valuePrinted = addressBookValue.addressContactList.stream().filter(n -> n.state.equals(stateName))
-                    .peek( n -> System.out.println("Person name---"+ n.firstName + " "+ n.lastName))
-                    .collect(Collectors.toList());
-        };
+        }); //  counting the persons
         countPerson = valuePrinted.size();
     }
 
@@ -79,7 +73,7 @@ public class AddressBookManage {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("welcome and create address books ");
-        AddressBookManage addBookManage = new AddressBookManage();
+        AdressBookManage addBookManage = new AdressBookManage();
         addBookManage.createAddBooks();
         boolean created = addBookManage.createAddBooks();
         System.out.println("Successfully created address books");
@@ -107,7 +101,6 @@ public class AddressBookManage {
                     break;
             }
             System.out.println("Number of persons found = " + addBookManage.countPerson);
-
         }
 
     }
